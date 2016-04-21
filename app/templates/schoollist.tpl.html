@@ -1,0 +1,90 @@
+    <div id="paged-wrapper">
+            <div class="row">
+                <div class="col-lg-15">
+                    <h1 class="page-header">Schools</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="dataTable_wrapper">
+  <form class="form-inline">
+        <div class="form-group">
+            <label >Search</label>
+            <input type="text" ng-model="search" class="form-control" placeholder="Search">
+        </div>
+    </form>
+<div class="bs-component" >
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+ <th ng-click="sort('id')">Id<span class="glyphicon sort-icon" ng-show="sortKey=='id'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+
+</th>
+            <th ng-click="sort('schoolName')">Name
+<span class="glyphicon sort-icon" ng-show="sortKey=='schoolName'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+
+
+            </th>
+
+            <th ng-click="sort('principalName')">Principal<span class="glyphicon sort-icon" ng-show="sortKey=='principalName'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+
+</th>
+            <th ng-click="sort('address')">Address<span class="glyphicon sort-icon" ng-show="sortKey=='address'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+
+</th>
+<th ng-click="sort('contactLandline')">Landline<span class="glyphicon sort-icon" ng-show="sortKey=='contactLandline'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+
+</th>
+<th ng-click="sort('contactEmailID')">Email-ID<span class="glyphicon sort-icon" ng-show="sortKey=='contactEmailID'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+
+</th>
+<th ng-click="sort('contactMobile')">Mobile<span class="glyphicon sort-icon" ng-show="sortKey=='contactMobile'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+
+</th>
+<th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr dir-paginate="school in schools|orderBy:sortKey:reverse|filter:search|itemsPerPage:3"
+>
+                                    <td>{{school.schoolID}}</td>
+                                    <td>{{school.schoolName}}</td>
+                                    <td>{{school.principalName}}</td>
+                                    <td>{{school.address}}</td>
+                                     <td>{{school.contactLandline}}</td>
+                                      <td>{{school.contactEmailID}}</td>
+                                       <td>{{school.contactMobile}}</td>
+                                    
+                                     <td>
+ <i class="fa fa-pencil fa-fw "></i> 
+                                      
+  <i class="fa fa-trash-o fa-lg "></i> </td>
+                                     
+                                </tr>
+                            </tbody>
+                        </table> 
+                         <dir-pagination-controls
+       max-size="5"
+       direction-links="true"
+       boundary-links="true" >
+    </dir-pagination-controls>
+                    </div> </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>

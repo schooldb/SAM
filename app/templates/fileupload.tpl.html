@@ -1,0 +1,26 @@
+<form>
+<div ng-controller = "myCtrl">
+    <input type="file" file-model="myFile"/>
+    <select name="standard" ng-model="standard">
+    <option value='1'>standard 1</option>
+    <option value='2'>standard 2</option>
+    <option value='3'>standard 3</option>
+    <option value='4'>standard 4</option>
+    <option value='5'>standard 5</option>
+    <option value='6'>standard 6</option>
+    <option value='7'>standard 7</option>
+    <option value='8'>standard 8</option>
+    <option value='9'>standard 9</option>
+    <option value='10'>standard 10</option>
+    </select>
+    <select name="section" ng-model="section">
+    <option value='1'>Section A</option>
+    <option value='2'>Section B</option>
+    <option value='3'>Section C</option>
+    <option value='4'>Section D</option>
+    <option value='5'>Section E</option>
+    <option value='6'>Section F</option>
+    </select>
+    <button ng-click="uploadFile()">upload me</button>
+</div>
+</form>

@@ -1,0 +1,24 @@
+{
+  "name": "angular2-quickstart",
+  "description": "",
+  "main": "index.html",
+  "authors": [
+    "madhusudhanv <madhusudhan.v255@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node",
+    "yui"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

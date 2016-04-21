@@ -1,0 +1,30 @@
+{
+  "name": "angular-training",
+  "version": "1.0.0",
+  "description": "Training material",
+  "main": "index.htm",
+  "scripts": {
+    "start": "ws --port=9000",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/accionlabs/angular-training.git"
+  },
+  "keywords": [
+    "Angular",
+    "Trainings"
+  ],
+  "author": "Devender Gupta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/accionlabs/angular-training/issues"
+  },
+  "homepage": "https://github.com/accionlabs/angular-training#readme",
+  "dependencies": {
+    "local-web-server": "^0.5.23"
+  },
+  "devDependencies": {
+    "local-web-server": "^0.5.23"
+  }
+}

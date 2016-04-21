@@ -1,0 +1,6 @@
+<div>
+	<a href="javascript:;" ng-click="editItem(task)" ng-hide="task.editing"><label ng-hide="task.editing">{{task.name}}</label></a>
+	<input type="text" ng-model="task.name" ng-show="task.editing" ></input>
+	<button ng-click="saveTask(task)" ng-show="task.editing">Save</button>
+	<button ng-click="deleteItem($index)" ng-show="task.editing">Delete</button>
+</div>

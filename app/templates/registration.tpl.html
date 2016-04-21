@@ -1,0 +1,15 @@
+<div>
+	<form class="form-panel">
+		<div class="form-group">
+			<label for="inputName">First Name</label>
+			<input type="text" id="inputName" class="form-control" name="first"ng-model="user.firstName"/>
+			<label for="inputName">Last Name</label>
+			<input type="text" id="inputName" class="form-control" name="last"ng-model="user.lastName"/>
+			<!--name-input user-name="{{user.firstName}}" label="First Name" />
+			<name-input user-name="{{user.lastName}}" label="Last Name" />-->
+			<input type="button" value="submit" ng-click="addemployee(user)">
+		</div>
+	</form>
+
+	<label>{{user.firstName}} {{user.lastName}}</label>
+</div>

@@ -1,0 +1,14 @@
+<div>
+	<h2>Tasks</h2>
+	<input type="text" ng-model="newTask"/>
+	<button ng-click="addNewTask()">Add</button>
+	<br/><br/>
+	<ul>
+		<li ng-repeat="task in tasks">
+			<task-list ></task-list>
+		</li>
+	</ul>
+
+	<task-list ></task-list>
+	<task-list ></task-list>
+</div>

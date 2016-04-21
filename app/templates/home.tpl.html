@@ -1,0 +1,9 @@
+<div>
+	<h2>Tasks</h2>
+	<ol>
+		<li ng-repeat="task in tasks">
+			{{task.statement}} <i class="glyphicon glyphicon-remove" ng-click="completeItem(task)"></i>
+		</li>
+	</ol>
+
+	</div>
