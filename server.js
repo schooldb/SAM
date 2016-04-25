@@ -1,9 +1,9 @@
 var express = require("express");
+var app = express();
 
 var mysql = require("mysql");
 var md5 = require("MD5");
 var session = require('express-session');
-var app = express();
 var multer = require('multer');
 var fs = require('fs');
 var parseXlsx = require('excel');
@@ -31,24 +31,24 @@ app.use(function (req, res, next) {
 	// Pass to next layer of middleware
 	next();
 });
-var connection = mysql.createConnection({
-host : "localhost",
-user : "root",
-password : "123",
-database : "test"
-});
+		var connection = mysql.createConnection({
+		host : "localhost",
+		user : "root",
+		password : "123",
+		database : "test"
+		});
 
 /*Connecting to Database*/
 
 connection.connect(function(error){
-if(error)
-{
-console.log("Problem with MySQL"+error);
-}
-else
-{
-console.log("Connected with Database");
-}
+		if(error)
+		{
+			console.log("Problem with MySQL"+error);
+		}
+		else
+		{
+			console.log("Connected with Database");
+		}
 });
 
 
@@ -128,12 +128,12 @@ app.get('/load',function(req,res){
 			});
 });
 
-app.post('/loginch1k', function(req, res){
+app.post('/loginchk', function(req, res){
   var user_name=req.body.email;
   //res.send(user_name);
   var password=md5(req.body.password);
   //res.send(password);
-  connection.query("SELECT * from employees where name='"+user_name+"' and password ='"+password+"'",function(err,rows){
+  connection.query("SELECT * from user where userName='"+user_name+"' and password ='"+password+"'",function(err,rows){
 					  
 						if(err)
 						{
@@ -142,9 +142,10 @@ app.post('/loginch1k', function(req, res){
 						else
 						{   if(rows.length >0){
 						  session.email=req.body.email;
-							 res.status(200).send({ success: "Successfully logged in" ,code:"1"});
+						 
+							 res.status(200).send({ success: "Login Successful" ,userType:rows[0].userType,code:"1" });
 						   }else{
-							  res.status(200).send({ success: "Login Unsuccessfully",code:"0" });
+							  res.status(200).send({ success: "Login Unsuccessful",code:"0" });
 
 						   }
 						}
@@ -171,16 +172,15 @@ app.post('/loginch1k', function(req, res){
  //connection.query("insert into employees
   //(name, location, password) VALUES ('Learn PHP', 'John Pou', NOW())");
 				password=md5('xx');
- var post  = {name: req.body.firstName, location: req.body.lastName,password:password};
-var query = connection.query('INSERT INTO employees SET ?', post, function(err, result) {
-  // Neat!
-});
-res.end("1");
+				 var post  = {name: req.body.firstName, location: req.body.lastName,password:password};
+				var query = connection.query('INSERT INTO employees SET ?', post, function(err, result) {
+				  // Neat!
+				});
+				res.end("1");
 					  //  console.log(req.body.firstName);
-		   
-				 
- 
-					});
+		   });
+
+
 app.post('/login',function(req,res){
 var user_name=req.body.email;
   var password=req.body.password;
@@ -297,18 +297,22 @@ app.get('/listschool',function(req,res){
 						}
 			});
      });
-			 app.get('/classsubjectassignment',function(req,res){
-						connection.query("SELECT * from classsubjectteachermapping as cstm LEFT JOIN class ON cstm.classID=class.classID LEFT JOIN section ON cstm.sectionID=section.sectionID LEFT JOIN subject ON cstm.subjectID=subject.subjectID LEFT JOIN teacher ON cstm.teacherID=teacher.teacherID ",function(err,rows){
-									if(err)
-									{
-											console.log("Problem with MySQL"+err);
-									}
-									else
-									{
-										 res.end(JSON.stringify(rows));
-									}
-						});
-			     });
+
+
+	 app.get('/classsubjectassignment',function(req,res){
+				connection.query("SELECT * from classsubjectteachermapping as cstm LEFT JOIN class ON cstm.classID=class.classID LEFT JOIN section ON cstm.sectionID=section.sectionID LEFT JOIN subject ON cstm.subjectID=subject.subjectID LEFT JOIN teacher ON cstm.teacherID=teacher.teacherID ",function(err,rows){
+							if(err)
+							{
+									console.log("Problem with MySQL"+err);
+							}
+							else
+							{
+								 res.end(JSON.stringify(rows));
+							}
+				});
+	     });
+
+
 
 			 app.get('/class',function(req,res){
 						connection.query("SELECT * from class  ",function(err,rows){

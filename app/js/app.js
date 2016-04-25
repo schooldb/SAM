@@ -6,11 +6,9 @@ app.config(['$stateProvider','$httpProvider', '$urlRouterProvider',function($sta
     $stateProvider.state('login', {
         url:'/login',
         templateUrl:'templates/login.tpl.html',
-        controller: 'AnotherCntrl'
+        controller: 'LoginCntrl'
     })
    
-
-
     .state('home', {
         url:'/home',
         templateUrl:'templates/home.tpl.html',
@@ -25,10 +23,16 @@ app.config(['$stateProvider','$httpProvider', '$urlRouterProvider',function($sta
     })
 
 
-    .state('fileupload', {
-        url:'/fileupload',
-        templateUrl:'templates/fileupload.tpl.html',
-        controller: 'myCtrl'
+    .state('studentfileupload', {
+        url:'/studentfileupload',
+        templateUrl:'templates/studentfileupload.tpl.html',
+        controller: 'studentfileupload'
+    })
+
+    .state('teacherfileupload', {
+        url:'/teacherfileupload',
+        templateUrl:'templates/teacherfileupload.tpl.html',
+        controller: 'teacherfileupload'
     })
  
 
@@ -58,15 +62,25 @@ app.config(['$stateProvider','$httpProvider', '$urlRouterProvider',function($sta
         templateUrl:'templates/class.tpl.html',
         controller: 'classController'
       })
+
+
    .state('classdetail', {
         url:'/classdetail/:classID/:sectionID',
         templateUrl:'templates/classdetail.tpl.html',
         controller: 'classDetailController'
       })
+
+
    .state('attendance', {
         url:'/attendance',
         templateUrl:'templates/attendance.tpl.html',
         controller: 'attendanceController'
+      })
+
+   .state('classsubjectassignment', {
+        url:'/classsubjectassignment',
+        templateUrl:'templates/classubjectassignment.tpl.html',
+        controller: 'classController'
       })
     
 }])

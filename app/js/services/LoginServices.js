@@ -3,7 +3,7 @@ app.service('LoginService', function ($http, $q) {
             var defer = $q.defer();
             var req = {
                 method: 'POST',
-                url: "http://localhost:3000/loginch1k",
+                url: "http://localhost:3000/loginchk",
                 data: obj
             }
               

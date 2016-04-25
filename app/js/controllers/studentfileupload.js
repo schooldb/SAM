@@ -1,4 +1,4 @@
-app.controller('myCtrl', ['$scope', 'fileUpload', function($scope, fileUpload){
+app.controller('studentfileupload', ['$scope', 'fileUpload', function($scope, fileUpload){
     
     $scope.uploadFile = function(){
         var file = $scope.myFile;

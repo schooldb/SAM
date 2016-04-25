@@ -1,6 +1,6 @@
-app.controller('schoolCntrl',  function($scope,SchoolService){
+app.controller('schoolCntrl',  function($scope,$rootScope,SchoolService){
 
-
+ $rootScope.show_header = true;
 	var schoollist=SchoolService.listschool();
 	
 	schoollist.then(function (response) {
